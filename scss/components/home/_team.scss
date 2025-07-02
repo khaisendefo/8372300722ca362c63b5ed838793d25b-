@@ -1,0 +1,104 @@
+.team {
+  padding: 80px 0;
+  background-color: var(--light-gray);
+
+  @include breakpoint-900 {
+    padding: 60px 0;
+  }
+
+  @include breakpoint-600 {
+    padding: 40px 0;
+  }
+
+  &__title {
+    margin-bottom: 25px;
+
+    @include breakpoint-900 {
+      margin-bottom: 20px;
+    }
+  }
+
+  &__body {
+    display: grid;
+    gap: 15px;
+    grid-template-columns: repeat(4, 1fr);
+
+    @include breakpoint-1100 {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    @include breakpoint-900 {
+      gap: 10px;
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  &__card {
+    border-radius: 12px;
+    padding: 12px;
+    box-shadow: 0 5px 15px 0 rgba(207,214,223,.3);
+    max-width: 100%;
+    background-color: var(--science-blue-50);
+
+    &-top {
+      position: relative;
+    }
+
+    &-image {
+      margin-bottom: 15px;
+      max-width: 100%;
+
+      & img {
+        border-radius: 12px;
+        width: 100%;
+
+        @include breakpoint-600 {
+          height: 220px;
+        }
+
+        @include breakpoint-500 {
+          height: 200px;
+        }
+      }
+    }
+
+    &-rating {
+      @include flex-align-center;
+      gap: 4px;
+      position: absolute;
+      right: 10px;
+      bottom: 10px;
+      border-radius: 5px;
+      padding: 6px 10px;
+      background-color: var(--science-blue-50);
+
+      & svg path {
+        fill: gold;
+      }
+    }
+
+    &-info {
+      @include flex-column;
+      gap: 15px;
+    }
+
+    &-list {
+      @include flex-column;
+      gap: 8px;
+    }
+
+    &-item {
+      @include flex-align-center;
+      gap: 5px;
+
+      &::before {
+        content: '';
+        display: inline-block;
+        border-radius: 50%;
+        height: 5px;
+        width: 5px;
+        background-color: var(--science-blue-900);
+      }
+    }
+  }
+}

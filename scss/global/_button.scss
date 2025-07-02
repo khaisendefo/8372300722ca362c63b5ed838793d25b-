@@ -1,0 +1,18 @@
+.button {
+  border-radius: 12px;
+  width: 160px;
+  height: 43px;
+  font-weight: 700;
+  font-size: 12px;
+
+  &-blue {
+    background-color: var(--science-blue-900);
+    color: var(--science-blue-50);
+  }
+
+  &-white {
+    border: 1px solid var(--science-blue-900);
+    background-color: var(--science-blue-50);
+    color: var(--science-blue-900);
+  }
+}

@@ -1,0 +1,123 @@
+.sale {
+  padding: 80px 0;
+  background-color: var(--light-gray);
+
+  @include breakpoint-900 {
+    padding: 60px 0;
+  }
+
+  @include breakpoint-600 {
+    padding: 40px 0;
+  }
+
+  &__container {
+    position: relative;
+  }
+
+  &__top {
+    @include flex-all-between;
+    margin-bottom: 25px;
+
+    @include breakpoint-900 {
+      margin-bottom: 20px;
+    }
+  }
+
+  & .prise__button {
+    @include breakpoint-800 {
+      display: none;
+    }
+  }
+
+  &__slider {
+
+    &-nav {
+      display: flex;
+
+      &-wrap {
+        position: relative;   
+      }
+
+      &-arrow {
+        @include flex-all-center;
+        position: absolute;
+        width: 40px;
+        height: 30px;
+        border-radius: 6px;
+        background-color: var(--science-blue-900);
+        z-index: 3;
+
+        &--prev {
+          top: 50%;
+          left: -40px;
+
+          @include breakpoint-1300 {
+            left: 0;
+          }
+        }
+
+        &--next {
+          top: 50%;
+          right: -40px;
+
+          @include breakpoint-1300 {
+            right: 0;
+          }
+        }
+
+        &--is-disabled {
+          opacity: 0.5;
+        }
+
+        & svg {
+          position: absolute;
+          top: 50%;
+          right: 50%;
+          width: 18px;
+          height: 18px;
+          transform: translate(50%, -50%);
+
+          & path {
+            fill: var(--science-blue-50);
+          }
+        }
+      }
+    }
+
+    &-list {
+      padding: 10px 0 !important;
+    }
+
+    &-slide {
+      border-radius: 12px;
+      padding: 12px;
+      box-shadow: 0 0px 5px 0 rgba(152, 154, 156, 0.338);
+      max-width: 100%;
+      background-color: var(--science-blue-50);
+    }
+
+    &-image {
+      width: 100%;
+      margin-bottom: 15px;
+
+      & img {
+        border-radius: 10px;
+        width: 100%;
+      }
+    }
+
+    &-info {
+      height: 100px;
+    }
+
+    &-name {
+      margin-bottom: 10px;
+    }
+
+    &-button {
+      width: 100%;
+      height: 54px;
+      font-size: 14px;
+    }
+  }
+}

@@ -1,0 +1,19 @@
+@import 'mixins/mixins';
+@import 'base/base';
+@import 'global/global';
+
+@import 'components/layout/header';
+@import 'components/layout/mobile-menu';
+@import 'components/home/hero';
+@import 'components/home/services';
+@import 'components/home/prise';
+@import 'components/home/process';
+@import 'components/home/test';
+@import 'components/home/portfolio';
+@import 'components/home/reasons';
+@import 'components/home/team';
+@import 'components/home/sale';
+@import 'components/home/step';
+@import 'components/home/faq';
+@import 'components/layout/footer';
+@import 'components/layout/modal';

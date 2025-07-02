@@ -1,0 +1,22 @@
+.form {
+  @include flex-column;
+  gap: 15px;
+
+  &-input {
+    border: 1px solid var(--gray-color);
+    border-radius: 12px;
+    background-color: transparent;
+    padding: 20px;
+    font-size: 15px;
+  }
+
+  &-confirmation {
+    @include flex-align-center;
+    gap: 5px;
+  }
+
+  &-checkbox {
+    width: 17px;
+    height: 17px;
+  }
+}

@@ -1,0 +1,177 @@
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 100;
+  width: 400px;
+  height: 100vh;
+  background-color: var(--science-blue-50);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateX(100%);
+  transition: transform var(--transition), opacity var(--transition), visibility var(--transition);
+
+  @include breakpoint-500 {
+    width: 100%;
+  }
+
+  &.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(0);
+  }
+
+  &__overlay {
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 100;
+    display: none;
+    width: 100%;
+    height: 100%;
+    background-color: #000000c3;
+
+    &.active {
+      display: block;
+    }
+  }
+
+  &__inner {
+    position: relative;
+    overflow-y: auto;
+    padding: 30px;
+    width: 100%;
+    height: 100%;
+  }
+
+  &__head {
+    margin-bottom: 10px;
+  }
+
+  &__close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background-color: transparent;
+
+    & rect {
+      fill: var(--science-blue-950);
+    }
+  }
+
+  &__nav {
+    &-list {
+      @include flex-column;
+    }
+
+    &-link {
+      display: block;
+      padding: 10px 0;
+      transition: color var(--transition);
+
+      &:hover {
+        opacity: 0.8;
+      }
+    }
+  }
+
+  &__submenu {
+    margin-bottom: 20px;
+
+    &-switch {
+      @include flex-all-between;
+      padding: 10px 0;
+      cursor: pointer;
+
+      & svg {
+        transform: rotate(-90deg);
+        transition: transform var(--accordion-transtion);
+
+        &.active {
+          transform: rotate(0);
+        }
+      }
+    }
+
+    &-dropdown {
+      overflow: hidden;
+      padding-top: 0;
+      max-height: 0;
+      transition: max-height var(--accordion-transtion), margin-bottom var(--accordion-transtion);
+
+      &.active {
+        max-height: auto;
+      }
+
+      &-link {
+        display: block;
+        padding: 10px;
+        transition: color var(--transition);
+
+        &:hover {
+         opacity: 0.8;
+        }
+      }
+    }
+  }
+
+  &__information {
+    @include flex-column;
+    gap: 20px;
+    margin-bottom: 20px;
+
+    &-address {
+      @include flex-align-center;
+      gap: 5px;
+
+      &-icon {
+        width: 20px;
+
+        & path {
+          stroke: var(--science-blue-950);
+        }
+      }
+
+      &-text {
+        font-style: normal;
+      }
+    }
+
+    &-tel {
+      @include flex-align-center;
+      gap: 5px;
+
+      &-icon {
+        width: 20px;
+
+        & path {
+          stroke: var(--science-blue-950);
+        }
+      }
+
+      &-number {
+        font-style: normal;
+        color: var(--science-blue-950);
+      }
+    }
+
+    &-email {
+      @include flex-align-center;
+      gap: 5px;
+
+      &-icon {
+        width: 20px;
+
+        & path {
+          stroke: var(--science-blue-950);
+        }
+      }
+
+      &-number {
+        font-style: normal;
+        color: var(--science-blue-950);
+      }
+    }
+  }
+
+}

@@ -1,0 +1,66 @@
+@import 'text';
+@import 'button';
+@import 'burger';
+@import 'form';
+
+::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 20px;
+  background-color: var(--science-blue-900);
+}
+
+::-webkit-scrollbar-track {
+  background-color: var(--science-blue-50);
+}
+
+.body {
+  font-family: "Montserrat", sans-serif;
+  background-color: var(--science-blue-50);
+}
+
+.wrapper {
+  width: 100%;
+  min-height: 100%;
+}
+
+$breakpoints: (
+  1400px: 1270px,
+  1300px: 1170px,
+  1200px: 1070px,
+  1100px: 970px,
+  1000px: 870px,
+  900px: 770px,
+  800px: 670px,
+  700px: 570px,
+  600px: 470px,
+  500px: 400px
+);
+
+.container {
+  margin: 0 auto;
+  padding: 0 15px;
+  max-width: 1170px;
+  height: 100%;
+
+  @each $breakpoint, $max-width in $breakpoints {
+    @media (max-width: #{$breakpoint}) {
+      max-width: $max-width;
+    }
+  }
+}
+
+.svg-accent-stroke path {
+  stroke: var(--science-blue-900);
+}
+
+.svg-accent-fill path {
+  fill: var(--science-blue-900);
+}
+
+address {
+  font-style: normal;
+}

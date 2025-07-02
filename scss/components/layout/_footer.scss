@@ -1,0 +1,140 @@
+.footer {
+  &__top {
+    @include flex-between;
+    padding: 30px 0;
+
+    @include breakpoint-900 {
+      padding: 20px 0;
+      flex-direction: column;
+      gap: 25px;
+    }
+
+    &-wrap {
+      display: grid;
+      gap: 50px 15px;
+      grid-template-columns: repeat(3, 1fr);
+
+      @include breakpoint-1200 {
+        gap: 25px;
+      }
+
+      @include breakpoint-700 {
+        display: flex;
+        flex-wrap: wrap;
+      }
+
+      @include breakpoint-500 {
+        gap: 25px;
+      }
+    }
+  }
+
+  &__label {
+    display: inline-block;
+    margin-bottom: 10px;
+  }
+
+  &__list {
+    @include flex-column;
+    gap: 10px;
+    width: 300px;
+
+    @include breakpoint-1200 {
+      width: 200px;
+    }
+
+    @include breakpoint-500 {
+      width: 160px;
+    }
+  }
+
+  &__contact {
+    &-col {
+      @include flex-column;
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+
+    &-link {
+      @include flex-align-center;
+      gap: 5px;
+
+      & svg {
+        width: 20px;
+        height: 20px;
+      }
+    }
+
+    &-item {
+      @include flex-column;
+      gap: 4px;
+    }
+  }
+
+  &__social {
+    @include flex-align-center;
+    gap: 10px;
+    margin-bottom: 20px;
+
+    &-description {
+      max-width: 105px;
+    }
+
+    &-list {
+      display: flex;
+      gap: 5px;
+    }
+
+    & img {
+      width: 28px;
+      height: 28px;
+    }
+  }
+
+  &__pay {
+    @include flex-column;
+    gap: 8px;
+    padding: 12px;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px 0 rgba(152, 154, 156, 0.435);
+    background-color: var(--science-blue-50);
+
+    @include breakpoint-900 {
+      display: inline-block;
+    }
+
+    &-images {
+      @include flex-align-center;
+      gap: 7px;
+    }
+  }
+
+  &__bottom {
+    @include flex-all-between;
+    padding: 30px 0;
+    border-top: 1px solid var(--gray-color);
+
+    @include breakpoint-900 {
+      padding: 20px 0;
+    }
+
+    @include breakpoint-700 {
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+  }
+
+  &__logo {
+    @include flex-align-center;
+    gap: 10px;
+
+    &-link {
+      font-size: 1.8em;
+      font-weight: 700;
+    }
+
+    &-description {
+      max-width: 200px;
+    }
+  }
+}

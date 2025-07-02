@@ -1,0 +1,230 @@
+.faq {
+  padding: 80px 0;
+  background-color: var(--light-gray);
+
+  @include breakpoint-900 {
+    padding: 60px 0;
+  }
+
+  @include breakpoint-600 {
+    padding: 40px 0;
+  }
+
+  &__content {
+    @include flex-between;
+    gap: 15px;
+
+    @include breakpoint-900 {
+      flex-direction: column;
+    }
+  }
+
+  &__title {
+    margin-bottom: 25px;
+
+    @include breakpoint-900 {
+      margin-bottom: 20px;
+    }
+  }
+
+  &__accordion {
+    @include flex-column;
+    gap: 15px;
+    max-width: 700px;
+
+    @include breakpoint-900 {
+      max-width: 100%;
+    }
+    
+
+    &-info {
+      @include flex-align-center;
+      gap: 8px;
+    }
+
+    &-number {
+      font-size: 20px;
+      font-weight: 700;
+      background-color: var(--science-blue-900);
+      color: var(--science-blue-50);
+      padding: 5px 10px;
+      border-radius: 6px;
+
+      @include breakpoint-600 {
+        padding: 3px 7px;
+        font-size: 17px;
+      }
+    }
+
+    &-item {
+      position: relative;
+      border-radius: 12px;
+      padding: 0 20px;
+      box-shadow: 0 0px 15px 0 rgba(119, 121, 123, 0.263);
+      max-width: 100%;
+      background-color: var(--science-blue-50);
+
+      &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: inline-block;
+        width: 5px;
+        height: 100%;
+        border-top-left-radius: 12px;
+        border-bottom-left-radius: 12px;
+        background-color: var(--science-blue-900);
+      }
+    }
+    
+    &-top {
+      @include flex-all-between;
+      padding: 20px 0;
+
+      @include breakpoint-600 {
+        padding: 15px 0;
+      }
+    }
+
+    &-icon {
+      position: relative;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      width: 30px;  
+      height: 30px;
+      box-shadow: 0 0px 15px 0 rgba(119, 121, 123, 0.263);
+      background-color: var(--science-blue-900);
+
+      @include breakpoint-600 {
+        width: 24px;
+        height: 24px;
+      }
+
+      & svg {
+        transition: transform var(--accordion-transtion) !important;
+
+        & path {
+          stroke: var(--science-blue-50);
+        }
+      }
+    }
+
+    &-body {
+      overflow: hidden;
+      padding: 0;
+      max-height: 0;
+      transition: max-height var(--accordion-transtion);
+
+      &.active {
+        max-height: auto;
+      }
+
+      & ul {
+        @include flex-column;
+        gap: 10px;
+        margin: 15px 0;
+      }
+
+      & li {
+        @include flex-align-center;
+        gap: 8px;
+
+        &::before {
+          content: '';
+          display: inline-block;
+          border-radius: 50%;
+          min-width: 8px;
+          min-height: 8px;
+          background-color: var(--science-blue-950);
+        }
+      }
+    }
+
+    &-description {
+      padding-bottom: 20px;
+
+      &-strong {
+        font-weight: 600;
+      }
+    }
+  }
+
+  &__window {
+    padding: 30px;
+    border-radius: 10px;
+    width: 450px;
+    background-color: var(--science-blue-50);
+    box-shadow: 0 0px 15px 0 rgba(119, 121, 123, 0.263);
+
+    @include breakpoint-500 {
+      padding: 22px;
+    }
+
+    @include breakpoint-900 {
+      width: 100%;
+    }
+    
+    &-title {
+      text-align: center;
+      margin-bottom: 10px;
+  
+      @include breakpoint-600 {
+        margin-bottom: 5px;
+      }
+    }
+  
+    &-description {
+      text-align: center;
+      margin-bottom: 15px;
+    }
+  }
+
+  &__social {
+    @include flex-column;
+    gap: 5px;
+    margin-bottom: 15px;
+
+    &-link {
+      @include flex-all-center;
+      padding: 20px;
+      gap: 7px;
+      border-radius: 12px;
+
+      & svg {
+        width: 23px;
+        height: 23px;
+
+        & path {
+          fill: var(--science-blue-50);
+        }
+      }
+
+      & span {
+        color: var(--science-blue-50);
+      }
+
+      &-whatsapp {
+        background-color: #26d265;
+      }
+
+      &-telegram {
+        background-color: #3fb3e0;
+      }
+    }
+  }
+
+  &__form {
+    &-button {
+      padding: 20px;
+      height: auto;
+      font-size: 15px;
+      width: 100%;
+
+      @include breakpoint-500 {
+        font-size: 0.9em;
+      }
+    }
+  }
+}
