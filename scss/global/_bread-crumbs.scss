@@ -1,0 +1,39 @@
+.bread-crumbs {
+  margin: 20px 0 30px;
+
+  @include breakpoint-800 {
+    margin: 20px 0;
+  }
+
+  &__nav {
+    overflow-x: scroll;
+
+    &::-webkit-scrollbar {
+      width: 0;
+      height: 0; 
+    }
+
+    &-list {
+      @include flex-align-center;
+      gap: 5px;
+      white-space: nowrap;
+
+      & span {
+        transform: translateY(2px);
+      }
+
+    }
+
+    &-link {
+      opacity: 0.6;
+
+      &:hover {
+        opacity: 1;
+      }
+
+      &-is-active {
+        opacity: 1;
+      }
+    }
+  }
+}

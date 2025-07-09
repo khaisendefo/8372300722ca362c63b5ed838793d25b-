@@ -1,0 +1,76 @@
+.prise {
+  padding: 80px 0;
+
+  @include breakpoint-900 {
+    padding: 60px 0;
+  }
+
+  @include breakpoint-600 {
+    padding: 40px 0;
+  }
+
+  &__top {
+    @include flex-all-between;
+    margin-bottom: 25px;
+
+    @include breakpoint-900 {
+      margin-bottom: 20px;
+    }
+  }
+
+  &__button {
+    @include breakpoint-600 {
+      display: none;
+    }
+  }
+
+  &__text {
+    @include flex-column;
+    gap: 10px;
+    margin-bottom: 25px;
+  }
+
+  &__body {
+  }
+
+  &__list {
+    border-radius: 20px;
+    padding: 15px 20px;
+    box-shadow: 0 5px 15px 0 rgba(152, 154, 156, 0.435);
+    max-width: 100%;
+    background-color: var(--science-blue-50);
+
+    &-item {
+      @include flex-all-between;
+      padding: 7px 0;
+      border-bottom: 1px solid var(--gray-color);
+
+      &:last-child {
+        border-bottom: none;
+      }
+    }
+
+    &-prise {
+      @include flex-align-center;
+      gap: 10px;
+    }
+
+    &-button {
+      display: inline-block;
+      padding: 6px 12px !important;
+      font-size: 13px;
+      width: auto;
+      height: auto;
+      border-radius: 4px;
+
+      @include breakpoint-500 {
+        font-size: 11px;
+      }
+    }
+  }
+
+  &__col {
+    @include flex-column;
+    gap: 15px;
+  }
+}

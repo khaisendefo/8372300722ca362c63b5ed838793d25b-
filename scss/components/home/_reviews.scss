@@ -1,0 +1,174 @@
+.reviews {
+  padding: 80px 0;
+  background-color: var(--light-gray);
+
+  @include breakpoint-900 {
+    padding: 60px 0;
+  }
+
+  @include breakpoint-600 {
+    padding: 40px 0;
+  }
+
+  &__top {
+    @include flex-all-between;
+    margin-bottom: 25px;
+
+    @include breakpoint-900 {
+      margin-bottom: 20px;
+    }
+  }
+
+  &__row {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+    margin-bottom: 25px;
+
+    @include breakpoint-1200 {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include breakpoint-900 {
+      margin-bottom: 20px;
+    }
+
+    @include breakpoint-600 {
+      grid-template-columns: repeat(1, 1fr);
+    }
+  }
+
+  &__card {
+    @include flex-between;
+    border-radius: 12px;
+    padding: 12px;
+    box-shadow: 0 0px 5px 0 rgba(152, 154, 156, 0.338);
+    max-width: 100%;
+    background-color: var(--science-blue-50);
+
+    &-info {
+      @include flex-column;
+      gap: 6px;
+    }
+
+    &-rating {
+      @include flex-column;
+      gap: 6px;
+      justify-content: center;
+      align-items: center;
+      padding: 10px;
+      border-radius: 6px;
+      background-color: var(--light-gray);
+
+      & span {
+        font-size: 17px;
+        font-weight: 700;
+      }
+    }
+  }
+
+  &__slider {
+
+    &-nav {
+      display: flex;
+
+      @include breakpoint-500 {
+        display: none;
+      }
+
+      &-wrap {
+        position: relative;   
+      }
+
+      &-arrow {
+        @include flex-all-center;
+        position: absolute;
+        width: 40px;
+        height: 30px;
+        border-radius: 6px;
+        background-color: var(--science-blue-900);
+        z-index: 3;
+
+        &--prev {
+          top: 50%;
+          left: -50px;
+
+          @include breakpoint-1300 {
+            left: -20px;
+          }
+
+          @include breakpoint-600 {
+            left: -30px;
+          }
+        }
+
+        &--next {
+          top: 50%;
+          right: -50px;
+
+          @include breakpoint-1300 {
+            right: -20px;
+          }
+
+          @include breakpoint-600 {
+            right: -30px;
+          }
+        }
+
+        &--is-disabled {
+          opacity: 0.5;
+        }
+
+        & svg {
+          position: absolute;
+          top: 50%;
+          right: 50%;
+          width: 18px;
+          height: 18px;
+          transform: translate(50%, -50%);
+
+          & path {
+            fill: var(--science-blue-50);
+          }
+        }
+      }
+    }
+
+    &-track {
+      padding: 3px !important;
+    }
+
+    &-slide {
+      border-radius: 12px;
+      padding: 30px;
+      box-shadow: 0 0px 5px 0 rgba(152, 154, 156, 0.338);
+      max-width: 100%;
+      background-color: var(--science-blue-50);
+
+      @include breakpoint-800 {
+        padding: 15px;
+      }
+    }
+
+    &-top {
+      @include flex-all-between;
+      margin-bottom: 15px;
+    }
+
+    &-info {
+      @include flex-column;
+      gap: 6px;
+    }
+
+    &-body {
+      height: 220px;
+    }
+
+    &-services {
+      display: inline-block;
+      border: 1px solid var(--science-blue-900);
+      padding: 5px 10px;
+      border-radius: 6px;
+    }
+  }
+}
