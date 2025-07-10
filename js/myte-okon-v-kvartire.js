@@ -187,6 +187,66 @@ const processSlider = () => {
 
 processSlider();
 
+const reviewsSlider = () => {
+  const splide = new Splide(".reviews__slider", {
+    perPage: 3,
+    perMove: 1,
+    gap: "15px",
+    autoplay: true,
+    interval: 2500,
+    pauseOnHover: true,
+    pagination: false,
+    arrows: false,
+
+    breakpoints: {
+      1100: {
+        perPage: 2,
+      },
+      800: {
+        gap: "10px",
+      },
+      700: {
+        perPage: 1.5,
+      },
+      600: {
+        perPage: 1
+      }
+    },
+  });
+
+  splide.mount();
+
+  const prevButton = document.querySelector(".reviews__slider-nav-arrow--prev");
+  const nextButton = document.querySelector(".reviews__slider-nav-arrow--next");
+
+  prevButton.addEventListener("click", () => splide.go("<"));
+  nextButton.addEventListener("click", () => splide.go(">"));
+
+  updateArrowState();
+
+  splide.on("move", updateArrowState);
+  splide.on("updated", updateArrowState);
+
+  function updateArrowState() {
+    if (splide.index === 0) {
+      prevButton.classList.add("reviews__slider-nav-arrow--is-disabled");
+    } else {
+      prevButton.classList.remove("reviews__slider-nav-arrow--is-disabled");
+    }
+
+    const lastSlideIndex = splide.Components.Controller.getEnd();
+
+    if (splide.index === lastSlideIndex) {
+      nextButton.classList.add("reviews__slider-nav-arrow--is-disabled");
+    } else {
+      nextButton.classList.remove("reviews__slider-nav-arrow--is-disabled");
+    }
+  }
+};
+
+reviewsSlider();
+
+
 // faq accordion
 const faqAccordion = () => {
   const faqItems = document.querySelectorAll(".faq__accordion-item");
